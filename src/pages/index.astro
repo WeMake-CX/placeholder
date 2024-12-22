@@ -1,11 +1,15 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+	<div style="width: 100%; height: 100%; aspect-ratio: 16/9; position: relative; background: black;">
+		<div style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 100%; height: 100%; max-width: calc(100vh * 16/9);">
+			<spline-viewer url="https://prod.spline.design/GeymntL9zZ1iLV5c/scene.splinecode"></spline-viewer>
+		</div>
+		<div style="position: absolute; top: 0; left: 0; width: 100%; height: calc((100% - (100vw * 9/16))/2); background: black;"></div>
+		<div style="position: absolute; bottom: 0; left: 0; width: 100%; height: calc((100% - (100vw * 9/16))/2); background: black;"></div>
+	</div>
 </Layout>
+
+<script type="module" is:inline src="https://unpkg.com/@splinetool/viewer@1.9.54/build/spline-viewer.js"></script>
